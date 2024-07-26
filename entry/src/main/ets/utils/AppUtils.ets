@@ -22,12 +22,22 @@ export class AppUtils {
 
   //获取UserId
   static getUserId():string{
-    let id = MMKV.defaultMMKV().decodeBool(StorageKeys.USER_ID)
+    let id = MMKV.defaultMMKV().decodeString(StorageKeys.USER_ID)
     return id + ""
   }
 
+  //存储默认HomeId
+  static saveDefaultHomeId(homeId: string){
+    MMKV.defaultMMKV().encodeString(StorageKeys.DEFAULT_HOME_ID,homeId)
+  }
+
+  //获取默认HomeId
+  static getDefaultHomeId(){
+    return MMKV.defaultMMKV().decodeString(StorageKeys.DEFAULT_HOME_ID)
+  }
+
   //存储HomeId
-  static saveUserId(homeId: string){
+  static saveHomeId(homeId: string){
     MMKV.defaultMMKV().encodeString(StorageKeys.HOME_ID,homeId)
   }
 

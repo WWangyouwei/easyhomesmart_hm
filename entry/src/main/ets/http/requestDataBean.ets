@@ -16,6 +16,25 @@ export interface UserInfoBean {
 }
 
 export interface HomeInfoBean {
-  homeId:string,
-  homeName:string
+  homeId:string
+  id?: string
+  homeName?: string
+  homeLocation?: string
+  longitude?: object
+  latitude?: object
+  theme?: number
+  province?: object
+  city?: object
+  county?: object
+  boardWallpaper?: object
+  boardSort?: string
+  defaultHome?: number
+  createTime?: string
+  updateTime?: string
+  delFlag?: string
+  roomQuantity?: string
+  deviceQuantity?: string
+  onlineQuantity?: string
+  offlineQuantity?: string
+  relation?: number
 }

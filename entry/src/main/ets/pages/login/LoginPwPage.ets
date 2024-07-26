@@ -83,7 +83,7 @@ export struct LoginPwPage{
     TextInput({ text: this.phone, placeholder: '请输入手机号', controller: this.phoneController })
       .placeholderColor($r('app.color.color_999'))
       .placeholderFont({ size: 14, weight: 400 })
-      .caretColor(Color.White)
+      .caretColor('#5CB5AE')
       .width('100%')
       .height(40)
       .margin({
@@ -103,10 +103,10 @@ export struct LoginPwPage{
   }
   @Builder
   passWordView() {
-    TextInput({ text: this.phone, placeholder: '请输入密码', controller: this.phoneController })
+    TextInput({ text: this.password, placeholder: '请输入密码', controller: this.phoneController })
       .placeholderColor($r('app.color.color_999'))
       .placeholderFont({ size: 14, weight: 400 })
-      .caretColor(Color.White)
+      .caretColor('#5CB5AE')
       .width('100%')
       .height(40)
       .margin({
@@ -117,10 +117,10 @@ export struct LoginPwPage{
       .fontColor($r('app.color.color_333333'))
       .backgroundColor('#00000000')
       .showUnderline(true)
-      .underlineColor('#FFEAEAEA')
+      .underlineColor('#EAEAEA')
       .type(InputType.Password)
       .onChange((value: string) => {
-        this.phone = value
+        this.password = value
       })
   }
   @Builder

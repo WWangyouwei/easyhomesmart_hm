@@ -11,4 +11,6 @@ export class StorageKeys {
   static readonly USER_ID = "user_id";
   static readonly USER_NAME = "user_name";
   static readonly HOME_ID = "home_id";
+  static readonly DEFAULT_HOME_ID = "default_home_id";
+  static readonly THEME = "theme";
 }

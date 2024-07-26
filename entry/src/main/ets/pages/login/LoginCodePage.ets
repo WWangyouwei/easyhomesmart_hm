@@ -3,12 +3,9 @@ import showToast from '../../utils/ToastUtils'
 import { postUserInfo, sendCode, smsLogin } from '../../http/apiService'
 
 import { StorageKeys } from '../../constants/StorageKeys'
-import { AppUtils } from '../../utils/AppUtils'
 import { MMKV } from '@tencent/mmkv'
 import { RoutePath } from '../../route/RoutePath'
-import { expect } from '@ohos/hypium/src/main/interface'
 import { DefaultBar } from '../../views/DefaultBar'
-import { logger } from '../../http/logger'
 
 @Entry
 @Component
@@ -198,7 +195,6 @@ export struct LoginCodePage {
         .objectFit(ImageFit.ScaleDown)
         .align(Alignment.Center)
         .onClick(() => {
-          showToast("sadscx")
           router.back();
         })
       // 设置最小宽度为160
@@ -212,7 +208,7 @@ export struct LoginCodePage {
     }
     .backgroundColor(Color.Transparent)
     .borderRadius(15)
-    .padding({ top: $r('app.float.size_20'), left: $r('app.float.size_15'), right: $r('app.float.size_15') })
+    .padding({ top: $r('app.float.size_35'), left: $r('app.float.size_15'), right: $r('app.float.size_15') })
     .width('100%')
   }
 

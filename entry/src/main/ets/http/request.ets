@@ -59,7 +59,7 @@ class HdHttp {
       if (res.result) {
         const result = res.result as HdResponse<T>
         if (result.code === 0) {
-          logger.info(fullUrl, JSON.stringify(res.result).substring(0, 200))
+          logger.info(fullUrl, JSON.stringify(res.result))
           return result
         }else if (result.code === 10020 || result.code === 10002) {
           authStore.delUser()
