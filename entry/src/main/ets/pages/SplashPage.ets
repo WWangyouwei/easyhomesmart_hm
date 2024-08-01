@@ -50,12 +50,13 @@ struct SplashPage {
   }
 
   goMainPage() {
-    let token = MMKV.defaultMMKV().decodeString(StorageKeys.TOKEN)
-    logger.info("token" + token)
-    if (token != null && token != '') {
-      router.replaceUrl({ url: RoutePath.MainPage })
-    } else {
-      router.replaceUrl({ url: RoutePath.LoginCodePage })
-    }
+    // let token = MMKV.defaultMMKV().decodeString(StorageKeys.TOKEN)
+    // logger.info("token" + token)
+    // if (token != null && token != '') {
+    //   router.replaceUrl({ url: RoutePath.MainPage })
+    // } else {
+    //   router.replaceUrl({ url: RoutePath.LoginCodePage })
+    // }
+    router.replaceUrl({ url: RoutePath.MainPage })
   }
 }

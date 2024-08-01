@@ -45,6 +45,16 @@ export class AppUtils {
   static getHomeId(){
     return MMKV.defaultMMKV().decodeString(StorageKeys.HOME_ID)
   }
+
+  //获取登录状态
+  static getLoginStatus(){
+    let token = MMKV.defaultMMKV().decodeString(StorageKeys.TOKEN)
+    if (token != null && token != '') {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
 // export const util = new AppUtils()

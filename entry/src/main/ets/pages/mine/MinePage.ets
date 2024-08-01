@@ -3,6 +3,9 @@ import { postUserInfo } from '../../http/apiService';
 import { CommonStatusBar } from '../../views/CommonStatusBar';
 import {ImageKnifeComponent} from '@ohos/imageknife'
 import { UserInfoBean } from '../../http/requestDataBean';
+import { AppUtils } from '../../utils/AppUtils';
+import { router } from '@kit.ArkUI';
+import { RoutePath } from '../../route/RoutePath';
 
 @Entry
 @Component
@@ -47,43 +50,73 @@ export struct MinePage {
         }
         .width("100%")
         .justifyContent(FlexAlign.SpaceBetween)
-        Row() {
-          ImageKnifeComponent({
-            imageKnifeOption: {
-              loadSrc: (item as UserInfoBean).userAvatarPath,
-              placeholderSrc: $r('app.media.dp_user_head'),
-              errorholderSrc: $r('app.media.dp_user_head'),
-              objectFit: ImageFit.Cover,
-              border: {radius:30}
+        if (AppUtils.getLoginStatus()) {
+          Row() {
+            ImageKnifeComponent({
+              imageKnifeOption: {
+                loadSrc: (item as UserInfoBean).userAvatarPath,
+                placeholderSrc: $r('app.media.dp_user_head'),
+                errorholderSrc: $r('app.media.dp_user_head'),
+                objectFit: ImageFit.Cover,
+                border: {radius:30}
+              }
+            })
+              .width(60)
+              .height(60)
+              .margin({ left: $r('app.float.size_20') })
+            Column() {
+              Text((item as UserInfoBean).userName == null ? "--" : (item as UserInfoBean).userName)
+                .textAlign(TextAlign.Start)
+                .fontColor('#1D1F24')
+                .fontSize($r('app.float.size_text_20'))
+              Row() {
+                Text('查看个人信息')
+                  .fontColor('#801d1f24')
+                  .fontSize($r('app.float.size_text_12'))
+                Image($r('app.media.dp_arrow_three'))
+                  .height($r('app.float.size_10'))
+                  .objectFit(ImageFit.Contain)
+                  .margin({ left: $r('app.float.size_2') })
+              }
+              .margin({ top: $r('app.float.size_6') })
             }
+            .margin({ left: $r('app.float.size_18') })
+            .alignItems(HorizontalAlign.Start)
+          }
+          .width("100%")
+          .margin({ top: $r('app.float.size_36'), bottom: $r('app.float.size_26') })
+          .onClick(() => {
+
           })
-            .width(60)
-            .height(60)
-            .margin({ left: $r('app.float.size_20') })
-          Column() {
-            Text((item as UserInfoBean).userName == null ? "--" : (item as UserInfoBean).userName)
-              .textAlign(TextAlign.Start)
+        } else {
+          Row() {
+            ImageKnifeComponent({
+              imageKnifeOption: {
+                loadSrc: $r('app.media.dp_user_head'),
+                placeholderSrc: $r('app.media.dp_user_head'),
+                errorholderSrc: $r('app.media.dp_user_head'),
+                objectFit: ImageFit.Cover,
+                border: {radius:30}
+              }
+            })
+              .width(60)
+              .height(60)
+              .margin({ left: $r('app.float.size_20') })
+            Text('登录/注册')
               .fontColor('#1D1F24')
               .fontSize($r('app.float.size_text_20'))
-            Row() {
-              Text('查看个人信息')
-                .fontColor('#801d1f24')
-                .fontSize($r('app.float.size_text_12'))
-              Image($r('app.media.dp_arrow_three'))
-                .height($r('app.float.size_10'))
-                .objectFit(ImageFit.Contain)
-                .margin({ left: $r('app.float.size_2') })
-                .onClick(() => {
-
-                })
-            }
-            .margin({ top: $r('app.float.size_6') })
+              .margin({ left: $r('app.float.size_10') })
+            Image($r('app.media.dp_arrow_three'))
+              .height($r('app.float.size_10'))
+              .objectFit(ImageFit.Contain)
+              .margin({ left: $r('app.float.size_2') })
           }
-          .margin({ left: $r('app.float.size_18') })
-          .alignItems(HorizontalAlign.Start)
+          .width("100%")
+          .margin({ top: $r('app.float.size_36'), bottom: $r('app.float.size_26') })
+          .onClick(() => {
+            router.pushUrl({ url: RoutePath.LoginCodePage })
+          })
         }
-        .width("100%")
-        .margin({ top: $r('app.float.size_36'), bottom: $r('app.float.size_26') })
       }
       .width("100%")
     } else if (index == 1) {
@@ -111,6 +144,13 @@ export struct MinePage {
         .backgroundColor(Color.White)
         .border({ radius: $r('app.float.size_15')})
         .flexGrow(1)
+        .onClick(() => {
+          if (!AppUtils.getLoginStatus()) {
+            router.pushUrl({ url: RoutePath.LoginCodePage })
+          } else {
+
+          }
+        })
         Flex() {}
         .width($r('app.float.size_10'))
         Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Start }) {
@@ -132,6 +172,13 @@ export struct MinePage {
         .backgroundColor(Color.White)
         .border({ radius: $r('app.float.size_15')})
         .flexGrow(1)
+        .onClick(() => {
+          if (!AppUtils.getLoginStatus()) {
+            router.pushUrl({ url: RoutePath.LoginCodePage })
+          } else {
+
+          }
+        })
       }
       .width("100%")
       .height($r('app.float.size_64'))
@@ -163,6 +210,13 @@ export struct MinePage {
         }
       })
       .flexGrow(1)
+      .onClick(() => {
+        if (!AppUtils.getLoginStatus()) {
+          router.pushUrl({ url: RoutePath.LoginCodePage })
+        } else {
+
+        }
+      })
     }
   }
 
