@@ -5,6 +5,7 @@ import { logger } from '../http/logger'
 import { RoutePath } from '../route/RoutePath'
 import { AppUtils } from '../utils/AppUtils'
 import { themeManager } from '../utils/themeManager'
+import { ImageKnife } from '@ohos/imageknife'
 
 @Entry
 @Component
@@ -12,6 +13,8 @@ struct SplashPage {
   @State message: string = 'Hello World'
 
   aboutToAppear() {
+    // 文件缓存
+    ImageKnife.getInstance().initFileCache(getContext(this), 256, 256 * 1024 * 1024)
     themeManager.initThemeSetting()
     themeManager.enableFullScreen()
     AppUtils.getVersionName()

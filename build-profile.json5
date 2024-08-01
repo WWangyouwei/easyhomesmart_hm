@@ -5,13 +5,13 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "/Users/wangyouwei/.ohos/config/auto_debug_hm_easyhomesmart_com.easyhomesmart.hm_70086000206156239.cer",
+          "certpath": "/Users/yupengxia/.ohos/config/auto_debug_hm_easyhomesmart_com.easyhomesmart.hm_70086000206156239.cer",
           "storePassword": "0000001B28049DD44C42B3279377DF7E70A38C6D37E6C081377F28B5112F437BEDE10DA87B1809412AF2BE",
           "keyAlias": "debugKey",
           "keyPassword": "0000001BC79734ADA62735BCFC57A080513182633629907EB82A6F917AC95DCF5948939BF7D8B2FE367B21",
-          "profile": "/Users/wangyouwei/.ohos/config/auto_debug_hm_easyhomesmart_com.easyhomesmart.hm_70086000206156239.p7b",
+          "profile": "/Users/yupengxia/.ohos/config/auto_debug_hm_easyhomesmart_com.easyhomesmart.hm_70086000206156239.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "/Users/wangyouwei/.ohos/config/auto_debug_hm_easyhomesmart_com.easyhomesmart.hm_70086000206156239.p12"
+          "storeFile": "/Users/yupengxia/.ohos/config/auto_debug_hm_easyhomesmart_com.easyhomesmart.hm_70086000206156239.p12"
         }
       }
     ],

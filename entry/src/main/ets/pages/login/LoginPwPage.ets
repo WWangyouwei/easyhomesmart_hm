@@ -22,7 +22,7 @@ export struct LoginPwPage{
       Column(){
         CommonTopBar({
           title: '',
-          rightTv: '验证码登录',
+          rightBtn: '验证码登录',
           rightClick: (()=>{
             router.back()
           })
