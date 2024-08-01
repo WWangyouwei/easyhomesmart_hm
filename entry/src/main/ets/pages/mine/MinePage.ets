@@ -227,7 +227,12 @@ export struct MinePage {
         lazyDataSource: this.dataSource,
         itemLayout: (item, index) => this.itemLayout(item, index),
         onRefresh: () => {
-          this.getUserInfo()
+          if (!AppUtils.getLoginStatus()) {
+            this.controller.finishRefresh();
+            router.pushUrl({ url: RoutePath.LoginCodePage })
+          } else {
+            this.getUserInfo()
+          }
         }
       })
     }
