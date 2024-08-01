@@ -156,10 +156,10 @@ export struct MinePage {
       .backgroundColor(Color.White)
       .border({
         radius: {
-          topLeft: (item as MinePageItem).title == '连接第三平台' ? $r('app.float.size_10') : 0,
-          topRight: (item as MinePageItem).title == '连接第三平台' ? $r('app.float.size_10') : 0,
-          bottomLeft: (item as MinePageItem).title == '帮助与反馈' ? $r('app.float.size_10') : 0,
-          bottomRight: (item as MinePageItem).title == '帮助与反馈' ? $r('app.float.size_10') : 0
+          topLeft: (item as MinePageItem).title == '连接第三平台' ? $r('app.float.size_15') : 0,
+          topRight: (item as MinePageItem).title == '连接第三平台' ? $r('app.float.size_15') : 0,
+          bottomLeft: (item as MinePageItem).title == '帮助与反馈' ? $r('app.float.size_15') : 0,
+          bottomRight: (item as MinePageItem).title == '帮助与反馈' ? $r('app.float.size_15') : 0
         }
       })
       .flexGrow(1)
